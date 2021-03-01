@@ -21,12 +21,12 @@ function loadOptions(option){
   btn.setAttribute('class', "dropdown-item")
   btn.setAttribute('type', 'button')
   btn.innerText = option.attributes.name
-  btn.addEventListener("click", (e) => {fetchCharacter(e.target.id)});
+  btn.addEventListener("click", (e) => {fetchCharacters(e.target.id)});
 
   dropdown.append(btn)
 }
 
-function fetchCharacter(value){
+function fetchCharacters(value){
   fetch(`${CATEGORIES_URL}/${value}`)
   .then(resp => resp.json())
   .then(json => {
