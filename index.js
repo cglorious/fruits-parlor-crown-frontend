@@ -52,15 +52,4 @@ function optionHeader(option){
   container.append(h1, p)
   jumbotron.append(container)
   header.append(jumbotron)
-
-  console.log(option.attributes.name)
-  // const div = document.getElementById('chart')
-  // const h2 = document.createElement('h2')
-  // const jobs = chart.attributes.jobs
-  //
-  // h2.setAttribute('class', 'chart-title')
-  // h2.innerText = `${chart.attributes.name} Chart`
-  // div.append(h2)
-  //
-  // renderJobs(jobs)
 }
