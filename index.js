@@ -44,6 +44,8 @@ function changeHeader(option){
   p.textContent = `Here is a list of known ${option.attributes.name}s.`
 }
 
+
+
 function optionHeader(option){
   const header = document.getElementById('option-header')
   const jumbotron = document.createElement('div')
