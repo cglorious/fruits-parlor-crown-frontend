@@ -31,6 +31,7 @@ function fetchCharacters(value){
   .then(resp => resp.json())
   .then(json => {
   changeHeader(json.data);
+  json.data.attributes.characters.forEach(character => renderCharacter(character))
 })
 }
 
@@ -44,7 +45,9 @@ function changeHeader(option){
   p.textContent = `Here is a list of known ${option.attributes.name}s.`
 }
 
-
+function renderCharacter(char){
+  console.log(char.name)
+}
 
 function optionHeader(option){
   const header = document.getElementById('option-header')
