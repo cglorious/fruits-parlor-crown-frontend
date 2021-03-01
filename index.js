@@ -3,10 +3,11 @@ const CHARACTERS_URL = `http://localhost:3000/api/v1/characters`
 const IMAGE_URL = `https://ih1.redbubble.net/image.361175264.4945/st,small,845x845-pad,1000x1000,f8f8f8.u5.jpg`
 
 document.addEventListener('DOMContentLoaded', () => {
-  loadCategories()
+  loadProgram()
 })
 
-function loadCategories(){
+//categories
+function loadProgram(){
   fetch(CATEGORIES_URL)
   .then(resp => resp.json())
   .then(json => {
@@ -21,36 +22,46 @@ function loadOptions(option){
   btn.setAttribute('id', option.id)
   btn.setAttribute('class', "dropdown-item")
   btn.setAttribute('type', 'button')
-  btn.innerText = `${option.attributes.name}s`
+  btn.innerText = `${option.attributes.name}`
   btn.addEventListener("click", (e) => {fetchCharacters(e.target.id)});
+  btn.addEventListener("mouseup", (e) => changeProfiles())
 
   dropdown.append(btn)
 }
 
+//characters
 function fetchCharacters(value){
   fetch(`${CATEGORIES_URL}/${value}`)
   .then(resp => resp.json())
   .then(json => {
-  changeHeader(json.data);
-  json.data.attributes.characters.forEach(character => renderCharacter(character))
-})
+    changeHeader(json.data);
+    json.data.attributes.characters.forEach(character => renderCharacter(character))
+  })
+}
+
+function changeProfiles(){
+  const parent = document.getElementById('category-option')
+  let totalChildren = document.getElementById('category-option').children.length
+  if (parent.hasChildNodes()) {
+    while (totalChildren > 0)
+      parent.childNodes[0].remove();
+  }
+  //cannot read property of undefined - console error
 }
 
 function changeHeader(option){
   const header = document.getElementById('display-4')
   const description = document.getElementById('lead')
   const p = document.getElementById('content')
-  const dropdown = document.getElementById('dropdown')
 
   header.textContent = `The ${option.attributes.name}s`
   description.textContent = "Moon mochi is sticky. It puffs up when grilled."
   p.textContent = `Here is a list of known ${option.attributes.name}s.`
-
-  dropdown.remove();
 }
 
 function renderCharacter(char){
-  const container = document.getElementById('character-container')
+  const option = document.getElementById('category-option')
+  const container = document.createElement('div')
 
   //create nodes
   const card = document.createElement('div')
@@ -67,6 +78,8 @@ function renderCharacter(char){
   const smallAfn = document.createElement('small')
 
   //set attributes
+  container.setAttribute('class', 'container')
+  container.setAttribute('id', `${char.category_id}`)
   card.setAttribute('class','card mb-3')
   row.setAttribute('class','row no-gutters')
   col4.setAttribute('class','col-md-4')
@@ -97,25 +110,5 @@ function renderCharacter(char){
   row.append(col4, col8)
   card.append(row)
   container.append(card)
-  console.log(char.name)
-}
-
-function optionHeader(option){
-  const header = document.getElementById('option-header')
-  const jumbotron = document.createElement('div')
-  const container = document.createElement('div')
-  const h1 = document.createElement('h1')
-  const p = document.createElement('p')
-
-  jumbotron.setAttribute('class', 'jumbotron jumbotron-fluid')
-  container.setAttribute('class', 'container')
-  h1.setAttribute('class', 'display-4')
-  p.setAttribute('class', 'lead')
-
-  h1.textContent = `The ${option.attributes.name}s`
-  p.textContent = `Here is a list of known ${option.attributes.name}s.`
-
-  container.append(h1, p)
-  jumbotron.append(container)
-  header.append(jumbotron)
+  option.append(container)
 }
