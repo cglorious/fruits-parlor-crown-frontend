@@ -40,10 +40,13 @@ function changeHeader(option){
   const header = document.getElementById('display-4')
   const description = document.getElementById('lead')
   const p = document.getElementById('content')
+  const dropdown = document.getElementById('dropdown')
 
   header.textContent = `The ${option.attributes.name}s`
   description.textContent = "Moon mochi is sticky. It puffs up when grilled."
   p.textContent = `Here is a list of known ${option.attributes.name}s.`
+
+  dropdown.remove();
 }
 
 function renderCharacter(char){
