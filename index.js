@@ -30,8 +30,18 @@ function fetchCharacters(value){
   fetch(`${CATEGORIES_URL}/${value}`)
   .then(resp => resp.json())
   .then(json => {
-  optionHeader(json.data);
+  changeHeader(json.data);
 })
+}
+
+function changeHeader(option){
+  const header = document.getElementById('display-4')
+  const description = document.getElementById('lead')
+  const p = document.getElementById('content')
+
+  header.textContent = `The ${option.attributes.name}s`
+  description.textContent = "Moon mochi is sticky. It puffs up when grilled."
+  p.textContent = `Here is a list of known ${option.attributes.name}s.`
 }
 
 function optionHeader(option){
