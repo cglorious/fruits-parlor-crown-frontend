@@ -26,6 +26,10 @@ function loadOptions(option){
   dropdown.append(btn)
 }
 
-function fetchCharacter(num){
-  console.log(num)
+function fetchCharacter(value){
+  fetch(`${CATEGORIES_URL}/${value}`)
+  .then(resp => resp.json())
+  .then(json => {
+  console.log(json.data);
+})
 }
