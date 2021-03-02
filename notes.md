@@ -1,3 +1,6 @@
 [ x ] click drop down, switch views
-[   ] add character option
+[ x ] add character option
 [   ] form
+[   ] add function for dropdown in form
+
+- how to set multiple attributes to node

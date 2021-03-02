@@ -49,7 +49,7 @@ function changeProfiles(){
       parent.childNodes[0].remove();
   } //cannot read property of undefined - console error
 
-  addCharacter()
+  addProfileHeader()
 }
 
 function changeHeader(option){
@@ -116,7 +116,7 @@ function renderCharacter(char){
   option.append(container)
 }
 
-function addCharacter(){
+function addProfileHeader(){
   const formHeader = document.getElementById('form-header')
   const jumbotron = document.createElement('div')
   const container = document.createElement('div')
@@ -133,8 +133,49 @@ function addCharacter(){
   h1.textContent = "Add a Profile"
   p.textContent = "Have you met someone new? Add their profile here."
   btn.textContent = "Add Profile"
+  //on click render addProfileForm
 
   container.append(h1, p, btn)
   jumbotron.append(container)
   formHeader.append(jumbotron)
+}
+
+function addProfileForm(){
+  const container = document.getElementById('form-container')
+  const form = document.createElement('form')
+
+  //category
+  const categoryDiv = document.createElement('div')
+  const categoryLabel = document.createElement('label')
+  const categorySelect = document.createElement('select')
+  const optionG = document.createElement('option')
+  const optionV = document.createElement('option')
+
+  //name
+  const nameDiv = document.createElement('div')
+  const nameLabel = document.createElement('label')
+  const nameInput = document.createElement('input')
+
+  //title
+  const titleDiv = document.createElement('div')
+  const titleLabel = document.createElement('label')
+  const titleInput = document.createElement('input')
+
+  //affiliation
+  const afnDiv = document.createElement('div')
+  const afnLabel = document.createElement('label')
+  const afnInput = document.createElement('input')
+
+  //power
+  const powerDiv = document.createElement('div')
+  const powerLabel = document.createElement('label')
+  const powerTextArea = document.createElement('input')
+
+  //bio
+  const bioDiv = document.createElement('div')
+  const bioLabel = document.createElement('label')
+  const bioTextArea = document.createElement('textarea')
+
+  const btn = document.createElement('button')
+
 }
