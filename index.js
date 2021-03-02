@@ -130,6 +130,10 @@ function addCharacter(){
   p.setAttribute('class', 'lead')
   btn.setAttribute('class', 'btn btn-primary btn-lg btn btn-info')
 
+  h1.textContent = "Add a Profile"
+  p.textContent = "Have you met someone new? Add their profile here."
+  btn.textContent = "Add Profile"
+
   container.append(h1, p, btn)
   jumbotron.append(container)
   formHeader.append(jumbotron)
