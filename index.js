@@ -42,11 +42,14 @@ function fetchCharacters(value){
 function changeProfiles(){
   const parent = document.getElementById('category-option')
   let totalChildren = document.getElementById('category-option').children.length
+  //const formHeader = document.getElementById('form-header')
+
   if (parent.hasChildNodes()) {
     while (totalChildren > 0)
       parent.childNodes[0].remove();
-  }
-  //cannot read property of undefined - console error
+  } //cannot read property of undefined - console error
+
+  addCharacter()
 }
 
 function changeHeader(option){
@@ -111,4 +114,27 @@ function renderCharacter(char){
   card.append(row)
   container.append(card)
   option.append(container)
+}
+
+function addCharacter(){
+  const formHeader = document.getElementById('form-header')
+  const jumbotron = document.createElement('div')
+  const container = document.createElement('div')
+  const h1 = document.createElement('h1')
+  const p = document.createElement('p')
+  const btn = document.createElement('button')
+
+  jumbotron.setAttribute('class', 'jumbotron jumbotron-fluid')
+  container.setAttribute('class', 'container')
+  h1.setAttribute('class', 'display-4')
+  p.setAttribute('class', 'lead')
+  btn.setAttribute('class', 'btn btn-primary btn-lg btn btn-info')
+
+  h1.textContent = "Add a Profile"
+  p.textContent = "Have you met someone new? Add their profile here."
+  btn.textContent = "Add Profile"
+
+  container.append(h1, p, btn)
+  jumbotron.append(container)
+  formHeader.append(jumbotron)
 }
