@@ -42,12 +42,14 @@ function fetchCharacters(value){
 function changeProfiles(){
   const parent = document.getElementById('category-option')
   let totalChildren = document.getElementById('category-option').children.length
+  //const formHeader = document.getElementById('form-header')
+
   if (parent.hasChildNodes()) {
     while (totalChildren > 0)
       parent.childNodes[0].remove();
-  }
-  //addCharacter()
-  //cannot read property of undefined - console error
+  } //cannot read property of undefined - console error
+
+  addCharacter()
 }
 
 function changeHeader(option){
@@ -121,6 +123,12 @@ function addCharacter(){
   const h1 = document.createElement('h1')
   const p = document.createElement('p')
   const btn = document.createElement('button')
+
+  jumbotron.setAttribute('class', 'jumbotron jumbotron-fluid')
+  container.setAttribute('class', 'container')
+  h1.setAttribute('class', 'display-4')
+  p.setAttribute('class', 'lead')
+  btn.setAttribute('class', 'btn btn-primary btn-lg btn btn-info')
 
   container.append(h1, p, btn)
   jumbotron.append(container)
