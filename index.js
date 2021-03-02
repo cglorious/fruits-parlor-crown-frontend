@@ -46,6 +46,7 @@ function changeProfiles(){
     while (totalChildren > 0)
       parent.childNodes[0].remove();
   }
+  //addCharacter()
   //cannot read property of undefined - console error
 }
 
@@ -111,4 +112,13 @@ function renderCharacter(char){
   card.append(row)
   container.append(card)
   option.append(container)
+}
+
+function addCharacter(){
+  const formHeader = document.getElementById('form-header')
+  const jumbotron = document.createElement('div')
+  const container = document.createElement('div')
+  const h1 = document.createElement('h1')
+  const p = document.createElement('p')
+  const btn = document.createElement('button')
 }
