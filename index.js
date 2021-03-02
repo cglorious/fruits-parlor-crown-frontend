@@ -121,4 +121,8 @@ function addCharacter(){
   const h1 = document.createElement('h1')
   const p = document.createElement('p')
   const btn = document.createElement('button')
+
+  container.append(h1, p, btn)
+  jumbotron.append(container)
+  formHeader.append(jumbotron)
 }
