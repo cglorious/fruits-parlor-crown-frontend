@@ -42,14 +42,13 @@ function fetchCharacters(value){
 function changeProfiles(){
   const parent = document.getElementById('category-option')
   let totalChildren = document.getElementById('category-option').children.length
-  //const formHeader = document.getElementById('form-header')
 
   if (parent.hasChildNodes()) {
     while (totalChildren > 0)
       parent.childNodes[0].remove();
   } //cannot read property of undefined - console error
 
-  addCharacter()
+  addProfileHeader()
 }
 
 function changeHeader(option){
@@ -116,7 +115,7 @@ function renderCharacter(char){
   option.append(container)
 }
 
-function addCharacter(){
+function addProfileHeader(){
   const formHeader = document.getElementById('form-header')
   const jumbotron = document.createElement('div')
   const container = document.createElement('div')
@@ -133,8 +132,109 @@ function addCharacter(){
   h1.textContent = "Add a Profile"
   p.textContent = "Have you met someone new? Add their profile here."
   btn.textContent = "Add Profile"
+  btn.addEventListener("click", () => addProfileForm());
 
   container.append(h1, p, btn)
   jumbotron.append(container)
   formHeader.append(jumbotron)
+}
+
+function addProfileForm(){
+  const container = document.getElementById('form-container')
+  const form = document.createElement('form')
+
+  //category
+  const categoryDiv = document.createElement('div')
+  const categoryLabel = document.createElement('label')
+  const categorySelect = document.createElement('select')
+  const optionG = document.createElement('option')
+  const optionV = document.createElement('option')
+
+  //name
+  const nameDiv = document.createElement('div')
+  const nameLabel = document.createElement('label')
+  const nameInput = document.createElement('input')
+
+  //title
+  const titleDiv = document.createElement('div')
+  const titleLabel = document.createElement('label')
+  const titleInput = document.createElement('input')
+
+  //affiliation
+  const afnDiv = document.createElement('div')
+  const afnLabel = document.createElement('label')
+  const afnInput = document.createElement('input')
+
+  //power
+  const powerDiv = document.createElement('div')
+  const powerLabel = document.createElement('label')
+  const powerTextarea = document.createElement('textarea')
+
+  //bio
+  const bioDiv = document.createElement('div')
+  const bioLabel = document.createElement('label')
+  const bioTextarea = document.createElement('textarea')
+
+  const btn = document.createElement('button')
+
+  categoryDiv.setAttribute('class', 'form-group')
+  categoryLabel.setAttribute('for', 'exampleFormControlSelect1')
+  categorySelect.setAttribute('class', 'form-control')
+  categorySelect.setAttribute('id', 'exampleFormControlSelect1')
+
+  nameDiv.setAttribute('class', 'form-group')
+  nameLabel.setAttribute('for', 'exampleFormControlInput1')
+  nameInput.setAttribute('type', 'text')
+  nameInput.setAttribute('class', 'form-control')
+  nameInput.setAttribute('id', 'exampleFormControlInput1')
+  nameInput.setAttribute('placeholder', 'Usagi Tsukino')
+
+  titleDiv.setAttribute('class', 'form-group')
+  titleLabel.setAttribute('for', 'exampleFormControlInput1')
+  titleInput.setAttribute('type', 'text')
+  titleInput.setAttribute('class', 'form-control')
+  titleInput.setAttribute('id', 'exampleFormControlInput1')
+  titleInput.setAttribute('placeholder', 'Sailor Moon')
+
+  afnDiv.setAttribute('class', 'form-group')
+  afnLabel.setAttribute('for', 'exampleFormControlInput1')
+  afnInput.setAttribute('type', 'text')
+  afnInput.setAttribute('class', 'form-control')
+  afnInput.setAttribute('id', 'exampleFormControlInput1')
+  afnInput.setAttribute('placeholder', 'Inner Sailor Scouts')
+
+  powerDiv.setAttribute('class', 'form-group')
+  powerLabel.setAttribute('for', 'exampleFormControlTextarea1')
+  powerTextarea.setAttribute('class', 'form-control')
+  powerTextarea.setAttribute('id', 'exampleFormControlTextarea1')
+  powerTextarea.setAttribute('rows', '3')
+
+  bioDiv.setAttribute('class', 'form-group')
+  bioLabel.setAttribute('for', 'exampleFormControlTextarea1')
+  bioTextarea.setAttribute('class', 'form-control')
+  bioTextarea.setAttribute('id', 'exampleFormControlTextarea1')
+  bioTextarea.setAttribute('rows', '3')
+
+  btn.setAttribute('type', 'submit')
+  btn.setAttribute('class', 'btn btn-primary btn-lg btn btn-info')
+
+  categoryLabel.textContent = "Category"
+  optionG.textContent = "Guardian"
+  optionV.textContent = "Villian"
+  nameLabel.textContent = "Name"
+  titleLabel.textContent = "Title"
+  afnLabel.textContent = "Affiliation"
+  powerLabel.textContent = "Power"
+  bioLabel.textContent = "Bio"
+  btn.textContent = "Add Profile"
+
+  categorySelect.append(optionG, optionV)
+  categoryDiv.append(categoryLabel, categorySelect)
+  nameDiv.append(nameLabel, nameInput)
+  titleDiv.append(titleLabel, titleInput)
+  afnDiv.append(afnLabel, afnInput)
+  powerDiv.append(powerLabel, powerTextarea)
+  bioDiv.append(bioLabel, bioTextarea)
+  form.append(categoryDiv, nameDiv, titleDiv, afnDiv, powerDiv, bioDiv, btn)
+  container.append(form)
 }
