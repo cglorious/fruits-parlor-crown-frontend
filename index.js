@@ -175,45 +175,57 @@ function addProfileForm(){
   const bioLabel = document.createElement('label')
   const bioTextarea = document.createElement('textarea')
 
+  //image_url
+  const imgDiv = document.createElement('div')
+  const imgLabel = document.createElement('label')
+  const imgInput = document.createElement('input')
+
   const btn = document.createElement('button')
 
   categoryDiv.setAttribute('class', 'form-group')
-  categoryLabel.setAttribute('for', 'exampleFormControlSelect1')
+  categoryLabel.setAttribute('for', 'category')
   categorySelect.setAttribute('class', 'form-control')
-  categorySelect.setAttribute('id', 'exampleFormControlSelect1')
+  categorySelect.setAttribute('id', 'category')
 
   nameDiv.setAttribute('class', 'form-group')
-  nameLabel.setAttribute('for', 'exampleFormControlInput1')
+  nameLabel.setAttribute('for', 'name-input')
   nameInput.setAttribute('type', 'text')
   nameInput.setAttribute('class', 'form-control')
-  nameInput.setAttribute('id', 'exampleFormControlInput1')
+  nameInput.setAttribute('id', 'name-input')
   nameInput.setAttribute('placeholder', 'Usagi Tsukino')
 
   titleDiv.setAttribute('class', 'form-group')
-  titleLabel.setAttribute('for', 'exampleFormControlInput1')
+  titleLabel.setAttribute('for', 'title-input')
   titleInput.setAttribute('type', 'text')
   titleInput.setAttribute('class', 'form-control')
-  titleInput.setAttribute('id', 'exampleFormControlInput1')
+  titleInput.setAttribute('id', 'title-input')
   titleInput.setAttribute('placeholder', 'Sailor Moon')
 
   afnDiv.setAttribute('class', 'form-group')
-  afnLabel.setAttribute('for', 'exampleFormControlInput1')
+  afnLabel.setAttribute('for', 'afn-input')
   afnInput.setAttribute('type', 'text')
   afnInput.setAttribute('class', 'form-control')
-  afnInput.setAttribute('id', 'exampleFormControlInput1')
+  afnInput.setAttribute('id', 'afn-input')
   afnInput.setAttribute('placeholder', 'Inner Sailor Scouts')
 
   powerDiv.setAttribute('class', 'form-group')
-  powerLabel.setAttribute('for', 'exampleFormControlTextarea1')
+  powerLabel.setAttribute('for', 'power-textarea')
   powerTextarea.setAttribute('class', 'form-control')
-  powerTextarea.setAttribute('id', 'exampleFormControlTextarea1')
+  powerTextarea.setAttribute('id', 'power-textarea')
   powerTextarea.setAttribute('rows', '3')
 
   bioDiv.setAttribute('class', 'form-group')
-  bioLabel.setAttribute('for', 'exampleFormControlTextarea1')
+  bioLabel.setAttribute('for', 'bio-textarea')
   bioTextarea.setAttribute('class', 'form-control')
-  bioTextarea.setAttribute('id', 'exampleFormControlTextarea1')
+  bioTextarea.setAttribute('id', 'bio-textarea')
   bioTextarea.setAttribute('rows', '3')
+
+  imgDiv.setAttribute('class', 'form-group')
+  imgLabel.setAttribute('for', 'img-input')
+  imgInput.setAttribute('type', 'text')
+  imgInput.setAttribute('class', 'form-control')
+  imgInput.setAttribute('id', 'img-input')
+  imgInput.setAttribute('placeholder', 'https://')
 
   btn.setAttribute('type', 'submit')
   btn.setAttribute('class', 'btn btn-primary btn-lg btn btn-info')
@@ -226,8 +238,10 @@ function addProfileForm(){
   afnLabel.textContent = "Affiliation"
   powerLabel.textContent = "Power"
   bioLabel.textContent = "Bio"
+  imgLabel.textContent = "Image URL"
   btn.textContent = "Submit"
-  btn.addEventListener("click", (e) => postInput(e));
+
+  form.addEventListener("submit", (e) => formHandler(e));
 
   categorySelect.append(optionG, optionV)
   categoryDiv.append(categoryLabel, categorySelect)
@@ -236,11 +250,31 @@ function addProfileForm(){
   afnDiv.append(afnLabel, afnInput)
   powerDiv.append(powerLabel, powerTextarea)
   bioDiv.append(bioLabel, bioTextarea)
-  form.append(categoryDiv, nameDiv, titleDiv, afnDiv, powerDiv, bioDiv, btn)
+  imgDiv.append(imgLabel, imgInput)
+  form.append(categoryDiv, nameDiv, titleDiv, afnDiv, powerDiv, bioDiv, imgDiv, btn)
   container.append(form)
 }
 
-function postInput(e){
-  e.preventDefault(e)
-  console.log("Submitted")
+function formHandler(e){
+  e.preventDefault()
+
+  // document.querySelector('#category').value
+  // document.querySelector('#name-input').value
+  // document.querySelector('#title-input').value
+  // document.querySelector('#afn-input').value
+  // document.querySelector('#power-textarea').value
+  // document.querySelector('#bio-textarea').value
+  // document.querySelector('#img-input').value
+
+  // const configObj = {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //     "Accept": "application/json"
+  //   },
+  //   body: JSON.stringify({})
+  // }
+
+  debugger
+  console.log(e.target)
 }
