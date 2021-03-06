@@ -87,7 +87,7 @@ function renderCharacter(char){
   col4.setAttribute('class','col-md-4')
   img.setAttribute('class','card-img')
   img.setAttribute('alt',`${char.name}`)
-  img.setAttribute('src', IMAGE_URL)
+  img.setAttribute('src', `${char.image_url}`)
   col8.setAttribute('class','col-md-8')
   cardBody.setAttribute('class','card-body')
   h5.setAttribute('class','card-title')
@@ -226,7 +226,8 @@ function addProfileForm(){
   afnLabel.textContent = "Affiliation"
   powerLabel.textContent = "Power"
   bioLabel.textContent = "Bio"
-  btn.textContent = "Add Profile"
+  btn.textContent = "Submit"
+  btn.addEventListener("click", (e) => postInput(e));
 
   categorySelect.append(optionG, optionV)
   categoryDiv.append(categoryLabel, categorySelect)
@@ -237,4 +238,9 @@ function addProfileForm(){
   bioDiv.append(bioLabel, bioTextarea)
   form.append(categoryDiv, nameDiv, titleDiv, afnDiv, powerDiv, bioDiv, btn)
   container.append(form)
+}
+
+function postInput(e){
+  e.preventDefault(e)
+  console.log("Submitted")
 }
