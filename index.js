@@ -186,6 +186,8 @@ function addProfileForm(){
   categoryLabel.setAttribute('for', 'category')
   categorySelect.setAttribute('class', 'form-control')
   categorySelect.setAttribute('id', 'category')
+  optionG.setAttribute('value', '1')
+  optionV.setAttribute('value', '2')
 
   nameDiv.setAttribute('class', 'form-group')
   nameLabel.setAttribute('for', 'name-input')
@@ -258,23 +260,32 @@ function addProfileForm(){
 function formHandler(e){
   e.preventDefault()
 
-  // document.querySelector('#category').value
-  // document.querySelector('#name-input').value
-  // document.querySelector('#title-input').value
-  // document.querySelector('#afn-input').value
-  // document.querySelector('#power-textarea').value
-  // document.querySelector('#bio-textarea').value
-  // document.querySelector('#img-input').value
+  const categoryId = parseInt(document.querySelector('#category').value)
+  const name = document.querySelector('#name-input').value
+  const title = document.querySelector('#title-input').value
+  const afn = document.querySelector('#afn-input').value
+  const power = document.querySelector('#power-textarea').value
+  const bio = document.querySelector('#bio-textarea').value
+  const img = document.querySelector('#img-input').value
 
-  // const configObj = {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //     "Accept": "application/json"
-  //   },
-  //   body: JSON.stringify({})
-  // }
+  postFetch(categoryId, name, title, afn, power, bio, img)
+}
 
-  debugger
-  console.log(e.target)
+function postFetch(category_id, name, title, afn, power, bio, img){
+  const configObj = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify({
+      // category_id: category_id
+    })
+
+    // fetch(CHARACTERS_URL, configObj)
+    //   .then(res => res.json())
+    //   .then(json => {
+    //
+    //   })
+  }
 }

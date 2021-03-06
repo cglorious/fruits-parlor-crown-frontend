@@ -2,7 +2,7 @@
 [ x ] add character option
 [ x ] form - load with javascript on click
 [   ] post fetch request
-[   ] add function for dropdown in form
+[   ] add function for dropdown in form, dynamically input value
 [   ] function - if no image, default to Luna
 
 - how to set multiple attributes to node
