@@ -3,10 +3,11 @@
 [ x ] form - load with javascript on click
 [ x ] post fetch request
 [   ] clear / delete form after submit
+[   ] clear profiles view on form submit
 
 Stretch
 [   ] default image for profiles
-[   ] add function for dropdown in form, dynamically input valu
+[   ] add function for dropdown in form, dynamically input value
 
 Refactor
 - how to set multiple attributes to node
