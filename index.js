@@ -271,21 +271,20 @@ function formHandler(e){
   postFetch(categoryId, name, title, afn, power, bio, img)
 }
 
-function postFetch(category_id, name, title, afn, power, bio, img){
+function postFetch(category_id, name, title, affiliation, power, bio, image_url){
+  const bodyData = {category_id, name, title, affiliation, power, bio, image_url}
   const configObj = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       "Accept": "application/json"
     },
-    body: JSON.stringify({
-      // category_id: category_id
-    })
-
-    // fetch(CHARACTERS_URL, configObj)
-    //   .then(res => res.json())
-    //   .then(json => {
-    //
-    //   })
+    body: JSON.stringify(bodyData)
   }
+
+  fetch(CHARACTERS_URL, configObj)
+    .then(res => res.json())
+    .then(json => {
+      console.log(json)
+    })
 }
