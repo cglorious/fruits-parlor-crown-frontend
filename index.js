@@ -182,6 +182,8 @@ function addProfileForm(){
 
   const btn = document.createElement('button')
 
+  form.setAttribute('id', 'form')
+
   categoryDiv.setAttribute('class', 'form-group')
   categoryLabel.setAttribute('for', 'category')
   categorySelect.setAttribute('class', 'form-control')
@@ -243,7 +245,10 @@ function addProfileForm(){
   imgLabel.textContent = "Image URL"
   btn.textContent = "Submit"
 
-  form.addEventListener("submit", (e) => formHandler(e));
+  form.addEventListener("submit", (e) => {
+    formHandler(e);
+    removeForm(e);
+  });
 
   categorySelect.append(optionG, optionV)
   categoryDiv.append(categoryLabel, categorySelect)
@@ -285,6 +290,10 @@ function postFetch(category_id, name, title, affiliation, power, bio, image_url)
   fetch(CHARACTERS_URL, configObj)
     .then(res => res.json())
     .then(json => {
-      console.log(json)
+      fetchCharacters(category_id)
     })
+}
+
+function removeForm(){
+  console.log("I removed the form.")
 }

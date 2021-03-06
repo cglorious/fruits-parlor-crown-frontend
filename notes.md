@@ -1,7 +1,8 @@
 [ x ] click drop down, switch views
 [ x ] add character option
 [ x ] form - load with javascript on click
-[   ] post fetch request
+[ x ] post fetch request
+[   ] clear / delete form after submit
 
 Stretch
 [   ] default image for profiles
