@@ -24,5 +24,5 @@
 - [ ] add function for dropdown in form, dynamically input value
 - [ ] multiple attributes to node
 
-### Debug
+#### Debug
 - [ ] Uncaught TypeError: Cannot read property 'remove' of undefined at changeProfiles (index.js:48) at HTMLButtonElement.<anonymous> (index.js:27)
