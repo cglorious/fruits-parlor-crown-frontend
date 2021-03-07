@@ -295,5 +295,7 @@ function postFetch(category_id, name, title, affiliation, power, bio, image_url)
 }
 
 function removeForm(){
+  const form = document.querySelector('#form')
+  form.remove()
   console.log("I removed the form.")
 }
