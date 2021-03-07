@@ -2,8 +2,9 @@
 [ x ] add character option
 [ x ] form - load with javascript on click
 [ x ] post fetch request
-[   ] clear / delete form after submit
-[   ] clear profiles view on form submit
+[ x ] clear / delete form after submit
+[ x ] clear view when adding 2nd profile
+[   ] form validation that requires input on all fields
 
 Stretch
 [   ] default image for profiles
