@@ -24,7 +24,7 @@ function loadOptions(option){
   btn.setAttribute('type', 'button')
   btn.innerText = `${option.attributes.name}`
   btn.addEventListener("click", (e) => {fetchCharacters(e.target.id)});
-  btn.addEventListener("mouseup", (e) => changeProfiles())
+  btn.addEventListener("mouseup", (e) => changeProfileView())
 
   dropdown.append(btn)
 }
@@ -39,15 +39,15 @@ function fetchCharacters(value){
   })
 }
 
-function changeProfiles(){
+function changeProfileView(){
   const parent = document.getElementById('category-option')
   let totalChildren = document.getElementById('category-option').children.length
 
   if (parent.hasChildNodes()) {
     while (totalChildren > 0)
       parent.childNodes[0].remove();
-  } //cannot read property of undefined - console error
-
+  }
+  //cannot read property of undefined - console error
   addProfileHeader()
 }
 
@@ -248,6 +248,7 @@ function addProfileForm(){
   form.addEventListener("submit", (e) => {
     formHandler(e);
     removeForm(e);
+    changeProfileView();
   });
 
   categorySelect.append(optionG, optionV)
@@ -295,5 +296,6 @@ function postFetch(category_id, name, title, affiliation, power, bio, image_url)
 }
 
 function removeForm(){
-  console.log("I removed the form.")
+  const form = document.querySelector('#form')
+  if (form) { form.remove() }
 }

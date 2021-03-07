@@ -2,11 +2,13 @@
 [ x ] add character option
 [ x ] form - load with javascript on click
 [ x ] post fetch request
-[   ] clear / delete form after submit
+[ x ] clear / delete form after submit
+[ x ] clear view when adding 2nd profile
+[   ] form validation that requires input on all fields
 
 Stretch
 [   ] default image for profiles
-[   ] add function for dropdown in form, dynamically input valu
+[   ] add function for dropdown in form, dynamically input value
 
 Refactor
 - how to set multiple attributes to node
