@@ -6,7 +6,7 @@
 - [x] As Luna, I want to add profiles for Guardians or Villains to keep track of information.
 
 #### Stretch
-- [ ] As Luna, I want to avoid entering profiles with missing information so I can have an accurate database.
+- [x] As Luna, I want to avoid entering profiles with missing information so I can have an accurate database.
 - [ ] As Luna, I want to avoid adding profiles that are already in the system so I can have an accurate database.
 
 ### TODO
@@ -20,7 +20,7 @@
 - [ ] integrate this into code
 
 #### Stretch
-- [ ] form validation that requires input on all fields
+- [x] form validation that requires input on all fields
 - [ ] form validation to search for duplicate information
 - [ ] add function for dropdown in form, dynamically input value
 - [ ] multiple attributes to node
