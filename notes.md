@@ -17,6 +17,7 @@
 - [x] post fetch request
 - [x] clear / delete form after submit
 - [x] clear view when adding 2nd profile
+- [ ] integrate this into code
 
 #### Stretch
 - [ ] form validation that requires input on all fields

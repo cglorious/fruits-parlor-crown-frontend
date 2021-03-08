@@ -246,8 +246,6 @@ function addProfileForm(){
 
   form.addEventListener("submit", (e) => {
     formHandler(e);
-    removeForm(e);
-    changeProfileView();
   });
 
   categorySelect.append(optionG, optionV)
@@ -273,7 +271,14 @@ function formHandler(e){
   const bio = document.querySelector('#bio-textarea').value
   const img = document.querySelector('#img-input').value
 
-  postFetch(categoryId, name, title, afn, power, bio, img)
+  const values = [name, title, afn, power, bio, img]
+  const found = values.find(element => element === "")
+
+  if (found === ""){
+    formError()
+  } else {
+    postFetch(categoryId, name, title, afn, power, bio, img)
+  }
 }
 
 function postFetch(category_id, name, title, affiliation, power, bio, image_url){
@@ -292,9 +297,21 @@ function postFetch(category_id, name, title, affiliation, power, bio, image_url)
     .then(json => {
       fetchCharacters(category_id)
     })
+
+  removeForm();
+  changeProfileView();
 }
 
 function removeForm(){
   const form = document.querySelector('#form')
+  const err = document.getElementById('form-error')
+
   if (form) { form.remove() }
+  if (err !== ""){ err.innerText = ""; }
+}
+
+function formError() {
+  const err = document.getElementById('form-error')
+  err.setAttribute('style', 'color:red; text-align:center;')
+  err.innerText = "Please complete all fields."
 }
