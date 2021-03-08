@@ -41,13 +41,12 @@ function fetchCharacters(value){
 
 function changeProfileView(){
   const parent = document.getElementById('category-option')
-  let totalChildren = document.getElementById('category-option').children.length
+  let header = document.getElementById('form-header')
 
   if (parent.hasChildNodes()) {
-    while (totalChildren > 0)
-      parent.childNodes[0].remove();
+    parent.innerText = "";
+    header.innerText = "";
   }
-  //cannot read property of undefined - console error
   addProfileHeader()
 }
 

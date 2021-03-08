@@ -2,7 +2,7 @@
 
 #### MVP
 - [x] As Luna, I want to view profiles so I can have information to guide the Sailor Scouts.
-- [ ] As Luna, I want to toggle between Guardians and Villains so I can sort through information efficiently.
+- [x] As Luna, I want to toggle between Guardians and Villains so I can sort through information efficiently.
 - [x] As Luna, I want to add profiles for Guardians or Villains to keep track of information.
 
 #### Stretch
