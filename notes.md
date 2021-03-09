@@ -17,13 +17,16 @@
 - [x] post fetch request
 - [x] clear / delete form after submit
 - [x] clear view when adding 2nd profile
-- [ ] integrate this into code
 
 #### Stretch
 - [x] form validation that requires input on all fields
 - [ ] form validation to search for duplicate information
 - [ ] add function for dropdown in form, dynamically input value
+
+### Refactor
+- [ ] integrate this into code
+- [ ] create splash page
+- [ ] dynamically integrate header
 - [ ] multiple attributes to node
 
 #### Debug
-- [ ] Uncaught TypeError: Cannot read property 'remove' of undefined at changeProfiles (index.js:48) at HTMLButtonElement.<anonymous> (index.js:27)
