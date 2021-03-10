@@ -4,11 +4,9 @@ const IMAGE_URL = `https://ih1.redbubble.net/image.361175264.4945/st,small,845x8
 
 document.addEventListener('DOMContentLoaded', () => {
   openProgram()
-  //fetchCategories()
 })
 
 //entrance
-
 function openProgram(){
   const entrance = document.getElementById('entrance')
   entrance.addEventListener('click', () => {
@@ -45,6 +43,9 @@ function loadHeader(){
   btn.setAttribute('class', 'btn btn-secondary dropdown-toggle')
   btn.setAttribute('type', 'button')
   btn.setAttribute('id', 'dropdownMenu2')
+  btn.setAttribute('data-toggle', 'dropdown')
+  btn.setAttribute('aria-haspopup', 'true')
+  btn.setAttribute('aria-expanded', 'false')
   menu.setAttribute('class', 'dropdown-menu')
   menu.setAttribute('id', 'dropdown-menu')
   menu.setAttribute('aria-labelledby', 'dropdownMenu2')
@@ -57,6 +58,8 @@ function loadHeader(){
   dropdown.append(btn, menu)
   jumbotron.append(h1, lead, hr, content, dropdown)
   header.append(jumbotron)
+
+  fetchCategories()
 }
 
 //categories
