@@ -3,11 +3,75 @@ const CHARACTERS_URL = `http://localhost:3000/api/v1/characters`
 const IMAGE_URL = `https://ih1.redbubble.net/image.361175264.4945/st,small,845x845-pad,1000x1000,f8f8f8.u5.jpg`
 
 document.addEventListener('DOMContentLoaded', () => {
-  loadProgram()
+  openProgram()
 })
 
+//entrance
+function openProgram(){
+  const entrance = document.getElementById('entrance')
+  entrance.addEventListener('click', () => {
+    removeEntrance()
+    loadWelcomePage()
+    fetchCategories()
+  })
+}
+
+function removeEntrance(){
+  const div = document.getElementById('entrance-div')
+  div.remove();
+}
+
+function loadWelcomePage(){
+  const header = document.getElementById('welcome-header')
+  const jumbotron = document.createElement('div')
+  const h1 = document.createElement('h1')
+  const lead = document.createElement('p')
+  const hr = document.createElement('hr')
+  const content = document.createElement('p')
+  const dropdown = document.createElement('div')
+  const btn = document.createElement('button')
+  const menu = document.createElement('div')
+  const div = document.createElement('div')
+  const img = document.createElement('img')
+
+  jumbotron.setAttribute('class', 'jumbotron')
+  h1.setAttribute('class', 'display-4')
+  h1.setAttribute('id', 'display-4')
+  lead.setAttribute('class', 'lead')
+  lead.setAttribute('id', 'lead')
+  hr.setAttribute('class', 'my-4')
+  content.setAttribute('id', 'content')
+  dropdown.setAttribute('class', 'dropdown')
+  dropdown.setAttribute('id', 'dropdown')
+  btn.setAttribute('class', 'btn btn-secondary dropdown-toggle')
+  btn.setAttribute('type', 'button')
+  btn.setAttribute('id', 'dropdownMenu2')
+  btn.setAttribute('data-toggle', 'dropdown')
+  btn.setAttribute('aria-haspopup', 'true')
+  btn.setAttribute('aria-expanded', 'false')
+  menu.setAttribute('class', 'dropdown-menu')
+  menu.setAttribute('id', 'dropdown-menu')
+  menu.setAttribute('aria-labelledby', 'dropdownMenu2')
+  div.setAttribute('class', 'image-div')
+  img.setAttribute('class', 'rounded')
+  img.setAttribute('alt', 'Luna')
+  img.setAttribute('id', 'welcome-image')
+  img.setAttribute('style', 'max-width: 75%; max-height: 75%, display: block;')
+
+  h1.innerText = "Welcome, Luna."
+  lead.innerText = "The Rabbit on the Moon bakes Mochi cakes."
+  content.innerText = "Code name 0091."
+  btn.innerText = "About"
+  img.src = IMAGE_URL
+
+  div.append(img)
+  dropdown.append(btn, menu)
+  jumbotron.append(h1, lead, hr, content, dropdown)
+  header.append(jumbotron, div)
+}
+
 //categories
-function loadProgram(){
+function fetchCategories(){
   fetch(CATEGORIES_URL)
   .then(resp => resp.json())
   .then(json => {
@@ -24,7 +88,9 @@ function loadOptions(option){
   btn.setAttribute('type', 'button')
   btn.innerText = `${option.attributes.name}`
   btn.addEventListener("click", (e) => {fetchCharacters(e.target.id)});
-  btn.addEventListener("mouseup", (e) => changeProfileView())
+  btn.addEventListener("mouseup", (e) => {
+    changeProfileView()
+  })
 
   dropdown.append(btn)
 }

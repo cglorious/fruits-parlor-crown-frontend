@@ -1,10 +1,12 @@
-.content {
+.image-div {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 700px;
+  height: 500px;
 }
 
-body {
-    background-color: white;
+.welcome-image {
+  max-width: 50%;
+  max-height: 50%;
+  display: block;
 }
