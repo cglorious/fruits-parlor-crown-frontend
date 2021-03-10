@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   openProgram()
 })
 
-//entrance
+//entrance and welcome page
 function openProgram(){
   const entrance = document.getElementById('entrance')
   entrance.addEventListener('click', () => {
@@ -61,7 +61,7 @@ function loadWelcomePage(){
 
   h1.innerText = "Welcome, Luna."
   lead.innerText = "The Rabbit on the Moon bakes Mochi cakes."
-  content.innerText = "Code name 0091."
+  content.innerText = "Which database would you like to review?"
   btn.innerText = "About"
   img.src = IMAGE_URL
 
@@ -90,6 +90,10 @@ function loadOptions(option){
   btn.innerText = `${option.attributes.name}`
   btn.addEventListener("click", (e) => {fetchCharacters(e.target.id)});
   btn.addEventListener("mouseup", (e) => {
+    const welcomeImage = document.getElementById('image-div')
+    if (welcomeImage){
+      welcomeImage.remove()
+    }
     changeProfileView()
   })
 
