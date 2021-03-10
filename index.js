@@ -57,7 +57,7 @@ function loadWelcomePage(){
   img.setAttribute('class', 'rounded')
   img.setAttribute('alt', 'Luna')
   img.setAttribute('id', 'welcome-image')
-  img.setAttribute('style', 'max-width: 75%; max-height: 75%, display: block;')
+  img.setAttribute('style', 'width: 500px; height: 500px; display: block;')
 
   h1.innerText = "Welcome, Luna."
   lead.innerText = "The Rabbit on the Moon bakes Mochi cakes."
