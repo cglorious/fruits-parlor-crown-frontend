@@ -28,5 +28,6 @@
 - [x] dynamically integrate header
 - [ ] multiple attributes to node
 - [ ] add enter button on top of splash page image
+- [ ] ability to scroll to bottom of the page
 
 #### Debug
