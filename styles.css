@@ -10,3 +10,7 @@
   max-height: 50%;
   display: block;
 }
+
+#form-container {
+  padding-bottom: 50px;
+}
