@@ -19,7 +19,7 @@ function openProgram(){
 
 function removeEntrance(){
   const div = document.getElementById('entrance-div')
-  div.innerText = "";
+  div.remove();
 }
 
 function loadHeader(){
