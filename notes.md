@@ -21,12 +21,12 @@
 #### Stretch
 - [x] form validation that requires input on all fields
 - [ ] form validation to search for duplicate information
-- [ ] add function for dropdown in form, dynamically input value
 
 ### Refactor
 - [ ] integrate this into code
-- [ ] create splash page
-- [ ] dynamically integrate header
+- [x] create splash page
+- [x] dynamically integrate header
 - [ ] multiple attributes to node
+- [ ] add enter button on top of splash page image
 
 #### Debug
