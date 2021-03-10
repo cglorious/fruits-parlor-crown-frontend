@@ -59,9 +59,9 @@ function loadWelcomePage(){
   img.setAttribute('id', 'welcome-image')
   img.setAttribute('style', 'width: 500px; height: 500px; display: block;')
 
-  h1.innerText = "Welcome, Luna."
+  h1.innerText = "Hello, Luna."
   lead.innerText = "The Rabbit on the Moon bakes Mochi cakes."
-  content.innerText = "Which database would you like to review?"
+  content.innerText = "Choose an option below to learn more."
   btn.innerText = "About"
   img.src = IMAGE_URL
 
