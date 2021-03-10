@@ -53,6 +53,7 @@ function loadWelcomePage(){
   menu.setAttribute('id', 'dropdown-menu')
   menu.setAttribute('aria-labelledby', 'dropdownMenu2')
   div.setAttribute('class', 'image-div')
+  div.setAttribute('id', 'image-div')
   img.setAttribute('class', 'rounded')
   img.setAttribute('alt', 'Luna')
   img.setAttribute('id', 'welcome-image')
