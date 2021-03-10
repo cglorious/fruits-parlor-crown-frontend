@@ -1,0 +1,10 @@
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+}
+
+body {
+    background-color: white;
+}
