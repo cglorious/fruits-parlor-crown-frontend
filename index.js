@@ -85,8 +85,6 @@ function renderCharacter(char){
   row.setAttribute('class','row no-gutters')
   col4.setAttribute('class','col-md-4')
   img.setAttribute('class','card-img')
-  img.setAttribute('alt',`${char.name}`)
-  img.setAttribute('src', `${char.image_url}`)
   col8.setAttribute('class','col-md-8')
   cardBody.setAttribute('class','card-body')
   h5.setAttribute('class','card-title')
@@ -97,6 +95,8 @@ function renderCharacter(char){
   smallAfn.setAttribute('class', 'text-muted')
 
   //set inner content
+  img.src = `${char.image_url}`
+  img.alt = `${char.name}`
   h5.textContent = `${char.name}, ${char.title}`
   bio.textContent = `${char.bio}`
   smallPower.textContent = `${char.power}`
