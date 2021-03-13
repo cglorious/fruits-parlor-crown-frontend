@@ -284,53 +284,72 @@ addProfileForm = () => {
 
   form.setAttribute('id', 'form')
 
+  //category
   categoryDiv.setAttribute('class', 'form-group')
   categoryLabel.setAttribute('for', 'category')
-  categorySelect.setAttribute('class', 'form-control')
-  categorySelect.setAttribute('id', 'category')
+  setAttributes(categorySelect, {'class': 'form-control','id': 'category' })
   optionG.setAttribute('value', '1')
   optionV.setAttribute('value', '2')
 
+  //name
   nameDiv.setAttribute('class', 'form-group')
   nameLabel.setAttribute('for', 'name-input')
-  nameInput.setAttribute('type', 'text')
-  nameInput.setAttribute('class', 'form-control')
-  nameInput.setAttribute('id', 'name-input')
-  nameInput.setAttribute('placeholder', 'Usagi Tsukino')
+  setAttributes(nameInput, {
+    'type': 'text',
+    'class': 'form-control',
+    'id': 'name-input',
+    'placeholder': 'Usagi Tsukino'
+  })
 
+  //title
   titleDiv.setAttribute('class', 'form-group')
   titleLabel.setAttribute('for', 'title-input')
-  titleInput.setAttribute('type', 'text')
-  titleInput.setAttribute('class', 'form-control')
-  titleInput.setAttribute('id', 'title-input')
-  titleInput.setAttribute('placeholder', 'Sailor Moon')
+  setAttributes(titleInput, {
+    'type': 'text',
+    'class': 'form-control',
+    'id': 'title-input',
+    'placeholder': 'Sailor Moon'
+  })
 
+  //afn
   afnDiv.setAttribute('class', 'form-group')
   afnLabel.setAttribute('for', 'afn-input')
-  afnInput.setAttribute('type', 'text')
-  afnInput.setAttribute('class', 'form-control')
-  afnInput.setAttribute('id', 'afn-input')
-  afnInput.setAttribute('placeholder', 'Inner Sailor Scouts')
+  setAttributes(afnInput, {
+    'type': 'text',
+    'class': 'form-control',
+    'id': 'afn-input',
+    'placeholder': 'Inner Sailor Scouts'
+  })
 
+  //power
   powerDiv.setAttribute('class', 'form-group')
   powerLabel.setAttribute('for', 'power-textarea')
-  powerTextarea.setAttribute('class', 'form-control')
-  powerTextarea.setAttribute('id', 'power-textarea')
-  powerTextarea.setAttribute('rows', '3')
+  setAttributes(powerTextarea, {
+    'class': 'form-control',
+    'id': 'power-textarea',
+    'rows': '3'
+  })
 
+  //bio
   bioDiv.setAttribute('class', 'form-group')
   bioLabel.setAttribute('for', 'bio-textarea')
-  bioTextarea.setAttribute('class', 'form-control')
-  bioTextarea.setAttribute('id', 'bio-textarea')
-  bioTextarea.setAttribute('rows', '3')
+  setAttributes(bioTextarea, {
+    'class': 'form-control',
+    'id': 'bio-textarea',
+    'rows': '3'
+  })
 
+  //image_url
   imgDiv.setAttribute('class', 'form-group')
   imgLabel.setAttribute('for', 'img-input')
-  imgInput.setAttribute('type', 'text')
-  imgInput.setAttribute('class', 'form-control')
-  imgInput.setAttribute('id', 'img-input')
-  imgInput.setAttribute('placeholder', 'https://')
+  setAttributes(imgInput, {
+    'type': 'text',
+    'class': 'form-control',
+    'id': 'img-input',
+    'placeholder': 'https://'
+  })
 
+  //btn
   btn.setAttribute('type', 'submit')
   btn.setAttribute('class', 'btn btn-primary btn-lg btn btn-info')
 
