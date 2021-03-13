@@ -22,9 +22,11 @@
 #### Stretch
 - [x] form validation that requires input on all fields
 - [ ] form validation to search for duplicate information
+- [ ] log in functionality
+- [ ] log out functionality (back to entrance screen)
 
 ### Refactor
-- [ ] integrate this into code
+- [x] integrate this into code
 - [x] create splash page
 - [x] dynamically integrate header
 - [ ] multiple attributes to node
