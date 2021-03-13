@@ -343,7 +343,7 @@ function formHandler(e){
   const img = document.querySelector('#img-input').value
 
   const values = [name, title, afn, power, bio, img]
-  const found = values.find(element => element === "")
+  const found =  values.find(element => element === "")
 
   if (found === ""){
     formError()
