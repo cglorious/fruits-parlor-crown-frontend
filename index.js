@@ -129,21 +129,25 @@ function changeHeader(option){
 
   const text = {
     id: option.id,
-    category: `The ${option.attributes.name}s`,
-    p: `Here is a list of known ${option.attributes.name}s.`,
-    villain: "It takes more than guts to beat the Negaverse.",
-    guardian: "Meet the champions of justice.",
-    villainFunc : function() { return this.villain; },
-    guardianFunc : function() { return this.guardian; }
+    guardian: [`The ${option.attributes.name}s`, "Meet the champions of justice.", `Remember ${option.attributes.name}s, you must live for those that love you.`],
+    villain: [`The ${option.attributes.name}s`, "It takes more than guts to beat the Negaverse.", `Beware. The ${option.attributes.name}s are seeking power and energy.`],
+    guardianFunc : function() {
+      header.textContent = this.guardian[0]
+      description.textContent = this.guardian[1];
+      p.textContent = text.guardian[2]
+    },
+    villainFunc : function() {
+      header.textContent = this.villain[0]
+      description.textContent = this.villain[1];
+      p.textContent = text.villain[2]
+    }
   }
 
-  header.textContent = text.category
   if (text.id === "1") {
-    description.textContent = text.guardianFunc();
+    text.guardianFunc();
   } else {
-    description.textContent = text.villainFunc();
+    text.villainFunc();
   }
-  p.textContent = text.p
 }
 
 function renderCharacter(char){
