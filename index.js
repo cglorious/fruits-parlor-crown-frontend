@@ -101,7 +101,7 @@ loadOptions = (option) => {
   })
 
   btn.innerText = `${option.attributes.name}`
-  
+
   btn.addEventListener("click", (e) => {fetchCharacters(e.target.id)});
   btn.addEventListener("mouseup", (e) => {
     const welcomeImage = document.getElementById('image-div')
@@ -182,8 +182,7 @@ renderCharacter = (char) => {
   const smallAfn = document.createElement('small')
 
   //set attributes
-  container.setAttribute('class', 'container')
-  container.setAttribute('id', `${char.category_id}`)
+  setAttributes(container, {'class': 'container', 'id': `${char.category_id}` })
   card.setAttribute('class','card mb-3')
   row.setAttribute('class','row no-gutters')
   col4.setAttribute('class','col-md-4')
@@ -192,8 +191,7 @@ renderCharacter = (char) => {
   cardBody.setAttribute('class','card-body')
   h5.setAttribute('class','card-title')
   bio.setAttribute('class','card-text')
-  power.setAttribute('class','card-text')
-  power.setAttribute('style','font-style: italic')
+  setAttributes(power, {'class': 'card-text', 'style': 'font-style: italic'})
   afn.setAttribute('class','card-text')
   smallAfn.setAttribute('class', 'text-muted')
 
