@@ -94,10 +94,14 @@ loadOptions = (option) => {
   const dropdown = document.getElementById('dropdown-menu')
   const btn = document.createElement('button')
 
-  btn.setAttribute('id', option.id)
-  btn.setAttribute('class', "dropdown-item")
-  btn.setAttribute('type', 'button')
+  setAttributes(btn, {
+    'id': option.id,
+    'class': 'dropdown-item',
+    'type': 'button'
+  })
+
   btn.innerText = `${option.attributes.name}`
+  
   btn.addEventListener("click", (e) => {fetchCharacters(e.target.id)});
   btn.addEventListener("mouseup", (e) => {
     const welcomeImage = document.getElementById('image-div')
