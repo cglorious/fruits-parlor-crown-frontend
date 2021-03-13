@@ -61,6 +61,7 @@ function loadWelcomePage(){
 
   h1.innerText = "Hello, Luna."
   lead.innerText = "The Rabbit on the Moon bakes Mochi cakes."
+  //Moon mochi is sticky. It puffs up when grilled.
   content.innerText = "Choose an option below to learn more."
   btn.innerText = "About"
   img.src = IMAGE_URL
@@ -126,9 +127,23 @@ function changeHeader(option){
   const description = document.getElementById('lead')
   const p = document.getElementById('content')
 
-  header.textContent = `The ${option.attributes.name}s`
-  description.textContent = "Moon mochi is sticky. It puffs up when grilled."
-  p.textContent = `Here is a list of known ${option.attributes.name}s.`
+  const text = {
+    id: option.id,
+    category: `The ${option.attributes.name}s`,
+    p: `Here is a list of known ${option.attributes.name}s.`,
+    villain: "It takes more than guts to beat the Negaverse.",
+    guardian: "Meet the champions of justice.",
+    villainFunc : function() { return this.villain; },
+    guardianFunc : function() { return this.guardian; }
+  }
+
+  header.textContent = text.category
+  if (text.id === "1") {
+    description.textContent = text.guardianFunc();
+  } else {
+    description.textContent = text.villainFunc();
+  }
+  p.textContent = text.p
 }
 
 function renderCharacter(char){
