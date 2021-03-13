@@ -2,7 +2,7 @@ const CATEGORIES_URL = `http://localhost:3000/api/v1/categories`
 const CHARACTERS_URL = `http://localhost:3000/api/v1/characters`
 const IMAGE_URL = `https://ih1.redbubble.net/image.361175264.4945/st,small,845x845-pad,1000x1000,f8f8f8.u5.jpg`
 
-//set attribute helper method
+//helper method to set attributes
 setAttributes = (el, attrs) => {
   for(var key in attrs) {
     el.setAttribute(key, attrs[key]);
