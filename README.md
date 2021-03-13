@@ -1,3 +1,5 @@
+![Sailor Guardians](https://dw9to29mmj727.cloudfront.net/promo/2016/5257-SeriesHeaders_SMv3_2000x800.jpg)
+
 # Fruits Parlor Crown
 
 Fruits Parlor Crown is a Single Page Application (SPA) built while attending Flatiron School using JavaScript that communicates with the backend Ruby on Rails API. It is a Sailor Moon fandom database for characters in the Sailor Moon anime series. Users can interact by viewing the Guardian page or Villain page.
