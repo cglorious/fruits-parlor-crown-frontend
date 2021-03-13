@@ -1,4 +1,4 @@
-![Sailor Guardians](https://dw9to29mmj727.cloudfront.net/promo/2016/5257-SeriesHeaders_SMv3_2000x800.jpg)
+![Sailor Guardians](/images/sailor-guardians.jpg)
 
 # Fruits Parlor Crown
 
