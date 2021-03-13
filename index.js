@@ -2,6 +2,13 @@ const CATEGORIES_URL = `http://localhost:3000/api/v1/categories`
 const CHARACTERS_URL = `http://localhost:3000/api/v1/characters`
 const IMAGE_URL = `https://ih1.redbubble.net/image.361175264.4945/st,small,845x845-pad,1000x1000,f8f8f8.u5.jpg`
 
+//set attribute helper method
+setAttributes = (el, attrs) => {
+  for(var key in attrs) {
+    el.setAttribute(key, attrs[key]);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   openProgram()
 })
@@ -34,30 +41,32 @@ loadWelcomePage = () => {
   const div = document.createElement('div')
   const img = document.createElement('img')
 
-  jumbotron.setAttribute('class', 'jumbotron')
-  h1.setAttribute('class', 'display-4')
-  h1.setAttribute('id', 'display-4')
-  lead.setAttribute('class', 'lead')
-  lead.setAttribute('id', 'lead')
+  setAttributes(jumbotron, {'class': 'jumbotron'});
+  setAttributes(h1, {'class': 'display-4','id': 'display-4'});
+  setAttributes(lead, {'class': 'lead','id': 'lead'})
   hr.setAttribute('class', 'my-4')
   content.setAttribute('id', 'content')
-  dropdown.setAttribute('class', 'dropdown')
-  dropdown.setAttribute('id', 'dropdown')
-  btn.setAttribute('class', 'btn btn-secondary dropdown-toggle')
-  btn.setAttribute('type', 'button')
-  btn.setAttribute('id', 'dropdownMenu2')
-  btn.setAttribute('data-toggle', 'dropdown')
-  btn.setAttribute('aria-haspopup', 'true')
-  btn.setAttribute('aria-expanded', 'false')
-  menu.setAttribute('class', 'dropdown-menu')
-  menu.setAttribute('id', 'dropdown-menu')
-  menu.setAttribute('aria-labelledby', 'dropdownMenu2')
-  div.setAttribute('class', 'image-div')
-  div.setAttribute('id', 'image-div')
-  img.setAttribute('class', 'rounded')
-  img.setAttribute('alt', 'Luna')
-  img.setAttribute('id', 'welcome-image')
-  img.setAttribute('style', 'width: 500px; height: 500px; display: block;')
+  setAttributes(dropdown, {'class': 'dropdown','id': 'dropdown'})
+  setAttributes(btn, {
+    'class': 'btn btn-secondary dropdown-toggle',
+    'type': 'button',
+    'id': 'dropdownMenu2',
+    'data-toggle': 'dropdown',
+    'aria-haspopup': 'true',
+    'aria-expanded': 'false'
+  })
+  setAttributes(menu, {
+    'class': 'dropdown-menu',
+    'id': 'dropdown-menu',
+    'aria-labelledby': 'dropdownMenu2'
+  })
+  setAttributes(div, {'class': 'image-div', 'id': 'image-div'})
+  setAttributes(img, {
+    'class': 'rounded',
+    'alt': 'Luna',
+    'id': 'welcome-image',
+    'style': 'width: 500px; height: 500px; display: block;'
+  })
 
   h1.innerText = "Hello, Luna."
   lead.innerText = "The Rabbit on the Moon bakes Mochi cakes."
