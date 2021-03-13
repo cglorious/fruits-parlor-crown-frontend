@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 //entrance and welcome page
-const openProgram = () => {
+openProgram = () => {
   const entrance = document.getElementById('entrance')
   entrance.addEventListener('click', () => {
     removeEntrance()
@@ -16,12 +16,12 @@ const openProgram = () => {
   })
 }
 
-const removeEntrance = () => {
+removeEntrance = () => {
   const div = document.getElementById('entrance-div')
   div.remove();
 }
 
-const loadWelcomePage = () => {
+loadWelcomePage = () => {
   const header = document.getElementById('welcome-header')
   const jumbotron = document.createElement('div')
   const h1 = document.createElement('h1')
@@ -73,7 +73,7 @@ const loadWelcomePage = () => {
 }
 
 //categories
-const fetchCategories = () => {
+fetchCategories = () => {
   fetch(CATEGORIES_URL)
   .then(resp => resp.json())
   .then(json => {
@@ -81,7 +81,7 @@ const fetchCategories = () => {
   })
 }
 
-const loadOptions = (option) => {
+loadOptions = (option) => {
   const dropdown = document.getElementById('dropdown-menu')
   const btn = document.createElement('button')
 
@@ -102,7 +102,7 @@ const loadOptions = (option) => {
 }
 
 //characters
-const fetchCharacters = (value) => {
+fetchCharacters = (value) => {
   fetch(`${CATEGORIES_URL}/${value}`)
   .then(resp => resp.json())
   .then(json => {
@@ -111,7 +111,7 @@ const fetchCharacters = (value) => {
   })
 }
 
-const changeProfileView = () => {
+changeProfileView = () => {
   const parent = document.getElementById('category-option')
   let header = document.getElementById('form-header')
 
@@ -122,7 +122,7 @@ const changeProfileView = () => {
   addProfileHeader()
 }
 
-const changeHeader = (option) => {
+changeHeader = (option) => {
   const header = document.getElementById('display-4')
   const description = document.getElementById('lead')
   const p = document.getElementById('content')
@@ -150,7 +150,7 @@ const changeHeader = (option) => {
   }
 }
 
-const renderCharacter = (char) => {
+renderCharacter = (char) => {
   const option = document.getElementById('category-option')
   const container = document.createElement('div')
 
@@ -204,7 +204,7 @@ const renderCharacter = (char) => {
   option.append(container)
 }
 
-const addProfileHeader = () => {
+addProfileHeader = () => {
   const formHeader = document.getElementById('form-header')
   const jumbotron = document.createElement('div')
   const container = document.createElement('div')
@@ -228,7 +228,7 @@ const addProfileHeader = () => {
   formHeader.append(jumbotron)
 }
 
-const addProfileForm = () => {
+addProfileForm = () => {
   const container = document.getElementById('form-container')
   const form = document.createElement('form')
 
@@ -350,7 +350,7 @@ const addProfileForm = () => {
   container.append(form)
 }
 
-const formHandler = (e) => {
+formHandler = (e) => {
   e.preventDefault()
 
   const categoryId = parseInt(document.querySelector('#category').value)
@@ -371,7 +371,7 @@ const formHandler = (e) => {
   }
 }
 
-const postFetch = (category_id, name, title, affiliation, power, bio, image_url) => {
+postFetch = (category_id, name, title, affiliation, power, bio, image_url) => {
   const bodyData = {category_id, name, title, affiliation, power, bio, image_url}
   const configObj = {
     method: "POST",
@@ -392,7 +392,7 @@ const postFetch = (category_id, name, title, affiliation, power, bio, image_url)
   changeProfileView();
 }
 
-const removeForm = () => {
+removeForm = () => {
   const form = document.querySelector('#form')
   const err = document.getElementById('form-error')
 
@@ -400,7 +400,7 @@ const removeForm = () => {
   if (err !== ""){ err.innerText = ""; }
 }
 
-const formError = () => {
+formError = () => {
   const err = document.getElementById('form-error')
   err.setAttribute('style', 'color:red; text-align:center;')
   err.innerText = "Please complete all fields."
