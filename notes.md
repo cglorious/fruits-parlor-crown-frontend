@@ -8,6 +8,7 @@
 #### Stretch
 - [x] As Luna, I want to avoid entering profiles with missing information so I can have an accurate database.
 - [ ] As Luna, I want to avoid adding profiles that are already in the system so I can have an accurate database.
+- [ ] As Luna, I want to log in and log out.
 
 ### TODO
 #### MVP
