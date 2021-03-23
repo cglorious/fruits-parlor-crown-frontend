@@ -70,7 +70,6 @@ loadWelcomePage = () => {
 
   h1.innerText = "Hello, Luna."
   lead.innerText = "The Rabbit on the Moon bakes Mochi cakes."
-  //Moon mochi is sticky. It puffs up when grilled.
   content.innerText = "Choose an option below to learn more."
   btn.innerText = "About"
   img.src = IMAGE_URL
@@ -86,7 +85,7 @@ fetchCategories = () => {
   fetch(CATEGORIES_URL)
   .then(resp => resp.json())
   .then(json => {
-    json.data.forEach(category => loadOptions(category));
+    for (category of json.data) { loadOptions(category) }
   })
 }
 
@@ -120,7 +119,7 @@ fetchCharacters = (value) => {
   .then(resp => resp.json())
   .then(json => {
     changeHeader(json.data);
-    json.data.attributes.characters.forEach(character => renderCharacter(character))
+    for (category of json.data.attributes.characters) { renderCharacter(category) }
   })
 }
 
