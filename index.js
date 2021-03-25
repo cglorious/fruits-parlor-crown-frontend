@@ -11,7 +11,18 @@ setAttributes = (el, attrs) => {
 
 document.addEventListener('DOMContentLoaded', () => {
   openProgram()
+  // darkMode()
 })
+
+// //dark mode
+// darkMode = () => {
+//   const dark = document.getElementById('dark-mode')
+//   const body = document.body
+//   dark.addEventListener('click', () => {
+//     body.classList.toggle('dark-mode')
+//     console.log(`It's dark!`)
+//   })
+// }
 
 //entrance and welcome page
 openProgram = () => {
