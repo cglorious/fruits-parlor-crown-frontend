@@ -11,7 +11,6 @@ setAttributes = (el, attrs) => {
 
 document.addEventListener('DOMContentLoaded', () => {
   openProgram()
-  // darkMode()
 })
 
 //entrance and welcome page
